@@ -3,7 +3,23 @@ export default {
   content: ["{html}./src/**/*.{html,ts,tsx}"],
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        inter:['Inter', 'sans-serif']
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.gold': {
+          'background-image': 'linear-gradient(to right, #754E16, #FFF88C, #754E16)',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          'color': 'transparent',
+          'font-weight': 'bold',
+        },
+      });
+    },
+  ],
 }
