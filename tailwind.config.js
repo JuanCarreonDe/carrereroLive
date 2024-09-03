@@ -6,6 +6,10 @@ export default {
     extend: {
       fontFamily:{
         inter:['Inter', 'sans-serif']
+      },
+      colors:{
+        gray: '#171717',
+        secondary: '#D3D3D3'
       }
     },
   },
@@ -18,6 +22,7 @@ export default {
           '-webkit-background-clip': 'text',
           'color': 'transparent',
           'font-weight': 'bold',
+          'font-size': '32px'
         },
       });
     },
