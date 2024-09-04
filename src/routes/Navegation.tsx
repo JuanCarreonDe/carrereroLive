@@ -6,7 +6,7 @@ export const Navegation = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={""} element={<Home />} />
+        <Route path={"carrereroLive"} element={<Home />} />
         <Route path={"page2"} element={<Page2 />} />
         <Route path={`/*`} element={<p>404 not found</p>} />
       </Routes>
