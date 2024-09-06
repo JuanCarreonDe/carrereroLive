@@ -15,15 +15,30 @@ export const Button = ({
 }: Props) => {
   if (toPath) {
     return (
-      <Link to={toPath} className={`px-6 py-1 hover:scale-105 transition-transform ${tailwindClass}`}>
+      <Link
+        to={toPath}
+        className={`px-6 py-1 hover:scale-105 transition-transform ${tailwindClass}`}
+      >
         {text}
       </Link>
     );
-  } else {
+  }
+  if (href) {
     return (
-      <a href={href} className={`px-6 py-1 hover:scale-105 transition-transform ${tailwindClass}`}>
+      <a
+        href={href}
+        className={`px-6 py-1 hover:scale-105 transition-transform ${tailwindClass}`}
+      >
         {text}
       </a>
+    );
+  } else {
+    return (
+      <button
+        className={`px-6 py-1 hover:scale-105 transition-transform ${tailwindClass} text-center`}
+      >
+        {text}
+      </button>
     );
   }
 };

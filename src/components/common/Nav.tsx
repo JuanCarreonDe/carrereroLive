@@ -9,7 +9,7 @@ export const Nav = () => {
       </div>
       <ul className="flex gap-4">
         <li>
-          <Link className="hover:scale-105 transition-transform" to={"/"}>Unirse</Link>
+          <Link className="hover:scale-105 transition-transform" to={"/register"}>Unirse</Link>
         </li>
         <li>
           <Link className="hover:scale-105 transition-transform" to={"/login"}>Iniciar Sesión</Link>
