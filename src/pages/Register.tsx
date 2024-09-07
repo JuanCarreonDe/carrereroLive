@@ -2,6 +2,7 @@ import { Container } from "../components/common/Container";
 import { Input } from "../components/common/Input";
 import { Button } from "../components/common/Button";
 import { Nav } from "../components/common/Nav";
+import { pathBase } from "../constants";
 
 export const Register = () => {
   return (
@@ -14,7 +15,7 @@ export const Register = () => {
         <Input placeholder="Confirmar Contraseña" type="password" />
         <Input placeholder="Nombre" />
         <Input placeholder="Apellido" />
-        <Button text="Crear Cuenta" />
+        <Button text="Crear Cuenta" toPath={`/${pathBase}/login`}/>
       </form>
     </Container>
   );

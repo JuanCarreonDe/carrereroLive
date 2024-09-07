@@ -17,7 +17,7 @@ export const Button = ({
     return (
       <Link
         to={toPath}
-        className={`px-6 py-1 hover:scale-105 transition-transform ${tailwindClass}`}
+        className={`px-6 py-1 hover:scale-105 transition-transform text-center ${tailwindClass}`}
       >
         {text}
       </Link>
@@ -27,7 +27,7 @@ export const Button = ({
     return (
       <a
         href={href}
-        className={`px-6 py-1 hover:scale-105 transition-transform ${tailwindClass}`}
+        className={`px-6 py-1 hover:scale-105 transition-transform text-center ${tailwindClass}`}
       >
         {text}
       </a>
