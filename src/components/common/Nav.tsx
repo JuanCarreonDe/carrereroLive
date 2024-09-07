@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from '../../assets/logo.png'
+import { pathBase } from "../../constants";
 
 export const Nav = () => {
   return (
@@ -9,10 +10,10 @@ export const Nav = () => {
       </div>
       <ul className="flex gap-4">
         <li>
-          <Link className="hover:scale-105 transition-transform" to={"/register"}>Unirse</Link>
+          <Link className="hover:scale-105 transition-transform" to={`/${pathBase}/register`}>Unirse</Link>
         </li>
         <li>
-          <Link className="hover:scale-105 transition-transform" to={"/login"}>Iniciar Sesión</Link>
+          <Link className="hover:scale-105 transition-transform" to={`/${pathBase}/login`}>Iniciar Sesión</Link>
         </li>
       </ul>
     </nav>
