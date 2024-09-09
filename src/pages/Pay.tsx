@@ -1,5 +1,5 @@
-import { Button } from "../components/common/Button";
 import { Container } from "../components/common/Container";
+import { Checkout } from "../components/common/Checkout";
 
 export const Pay = () => {
   return (
@@ -16,9 +16,8 @@ export const Pay = () => {
         <span>
           <strong>$149</strong>/mes
         </span>
-        <div className="flex flex-col gap-4">
-          <Button text="PayPal" tailwindClass="bg-[#FFC439] text-black" />
-          <Button text="Debit or Credit Card" />
+        <div className="flex flex-col gap-4 justify-center items-center">
+          <Checkout />
         </div>
       </div>
     </Container>
