@@ -1,5 +1,5 @@
 import { Container } from "../components/common/Container";
-import { Checkout } from "../components/common/Checkout";
+// import { Checkout } from "../components/common/Checkout";
 
 export const Pay = () => {
   return (
@@ -17,7 +17,8 @@ export const Pay = () => {
           <strong>$149</strong>/mes
         </span>
         <div className="flex flex-col gap-4 justify-center items-center">
-          <Checkout />
+          {/* <Checkout /> */}
+          <button>In progress...</button>
         </div>
       </div>
     </Container>

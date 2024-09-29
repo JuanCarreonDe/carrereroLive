@@ -2,8 +2,11 @@ import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 import devices from "../../assets/devices.png";
 import { pathBase } from "../../constants";
+import { useSupabaseStore } from "../../stores/supabaseStore";
 
 export const Advantages = () => {
+  const { session } = useSupabaseStore(); // Acceder a signIn y session del store
+
   return (
     <Container id="advantages">
       <h1 className="gold">Transmisiones en vivo</h1>
@@ -13,7 +16,7 @@ export const Advantages = () => {
         Texano y Agua Nueva desde un solo lugar
       </p>
       <Button
-        toPath={`/${pathBase}/register`}
+        toPath={`/${pathBase}/${session ? "lives" : "register"}`}
         text="Unirse"
         tailwindClass="self-start bg-secondary text-black"
       />

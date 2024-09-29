@@ -7,18 +7,28 @@ import { Pay } from "../pages/Pay";
 import { pathBase } from "../constants";
 import { Lives } from "../pages/Lives";
 import { Stream } from "../pages/Stream";
+import { useSupabaseStore } from "../stores/supabaseStore";
 
 export const Navegation = () => {
+  const { session } = useSupabaseStore(); // Acceder a signIn y session del store
   return (
     <BrowserRouter>
       <Routes>
         <Route path={`${pathBase}`} element={<Home />} />
         <Route path={"page2"} element={<Page2 />} />
-        <Route path={`${pathBase}/register`} element={<Register />} />
-        <Route path={`${pathBase}/login`} element={<Login />} />
-        <Route path={`${pathBase}/pay`} element={<Pay />} />
-        <Route path={`${pathBase}/lives`} element={<Lives />} />
-        <Route path={`${pathBase}/stream`} element={<Stream />} />
+
+        {session ? (
+          <>
+            <Route path={`${pathBase}/pay`} element={<Pay />} />
+            <Route path={`${pathBase}/lives`} element={<Lives />} />
+            <Route path={`${pathBase}/stream`} element={<Stream />} />
+          </>
+        ) : (
+          <>
+            <Route path={`${pathBase}/register`} element={<Register />} />
+            <Route path={`${pathBase}/login`} element={<Login />} />
+          </>
+        )}
         <Route path={`/*`} element={<p>404 not found</p>} />
       </Routes>
     </BrowserRouter>
