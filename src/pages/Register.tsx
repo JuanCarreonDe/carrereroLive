@@ -27,15 +27,11 @@ export const Register = () => {
       <Nav />
       <h1 className="gold w-fit">Crea una cuenta</h1>
       <form onSubmit={handleSignUp} className="flex flex-col gap-4">
-        {/* <Input placeholder="Correo electronico" />
-        <Input placeholder="Contraseña" type="password" />
-        <Input placeholder="Confirmar Contraseña" type="password" />
-        <Input placeholder="Nombre" />
-        <Input placeholder="Apellido" /> */}
         <input
           className="focus-visible:outline-none bg-transparent border-[1px] border-gray px-4 py-2"
           placeholder="Correo electrónico"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)} // Actualizar el estado de email
         />
         <input
@@ -43,14 +39,15 @@ export const Register = () => {
           placeholder="Contraseña"
           type="password"
           value={password}
+          required
           onChange={(e) => setPassword(e.target.value)} // Actualizar el estado de password
         />
         <button
+          type="submit"
           className={`px-6 py-1 hover:scale-105 transition-transform text-center bg-secondary text-black`}
         >
-          Iniciar sesión
+          Registrarse
         </button>
-        {/* <Button text="Crear Cuenta" toPath={`/${pathBase}/login`} /> */}
         {error && <p className="text-red-500">{error}</p>}{" "}
       </form>
     </Container>
