@@ -33,15 +33,6 @@ export const Register = () => {
 
   return (
     <Container>
-      <button
-        onClick={() =>
-          toast.loading("Cargando...", {
-            duration: 5000,
-          })
-        }
-      >
-        Render my toast
-      </button>
       <Nav />
       <Toaster
         toastOptions={{
