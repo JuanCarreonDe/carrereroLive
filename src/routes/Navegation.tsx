@@ -7,10 +7,10 @@ import { Pay } from "../pages/Pay";
 import { pathBase } from "../constants";
 import { Lives } from "../pages/Lives";
 import { Stream } from "../pages/Stream";
-import { useSupabaseStore } from "../stores/supabaseStore";
+import { useAuthStore } from "../stores/useAuthStore";
 
 export const Navegation = () => {
-  const { session } = useSupabaseStore(); // Acceder a signIn y session del store
+  const { session } = useAuthStore(); // Acceder a signIn y session del store
   return (
     <BrowserRouter>
       <Routes>

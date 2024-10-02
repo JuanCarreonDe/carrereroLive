@@ -2,177 +2,95 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=	, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Correo de Confirmación</title>
   </head>
-  <body>
-    <div class="content">
-      <h2 class="gold">Bienvenido a Carrerero Live</h2>
-
-      <p>Oprima el siguiente enlace para confirmar su cuenta:</p>
-      <p>
-        <a href="{{ .ConfirmationURL }}" class="button">Confirmar cuenta</a>
-      </p>
-    </div>
-
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="social-icons">
-          <a href="#" class="icon"><FaFacebook class="icon-size" /></a>
-          <a href="#" class="icon"><FaInstagram class="icon-size" /></a>
-          <a href="#" class="icon"><FaYoutube class="icon-size" /></a>
-        </div>
-
-        <div class="brand-info">
-          <strong class="brand-name">carrerero</strong>
-          <h3 class="brand-slogan">La marca de los campeones</h3>
-        </div>
-      </div>
-
-      <a class="credit">By Juan Carreón</a>
-    </footer>
-  </body>
-
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-    * {
+  <body
+    style="
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      max-width: 100%;
+      font-family: Arial, sans-serif;
+      background: #151515;
       color: #ffffff;
-      background: rgb(21, 21, 21);
-      background: linear-gradient(
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="
+        background: linear-gradient(
           135deg,
           rgba(21, 21, 21, 1) 0%,
           rgba(0, 0, 0, 1) 50%,
           rgba(21, 21, 21, 1) 100%
-        )
-        no-repeat;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: "Inter", "sans-serif";
-      flex-direction: column;
-      padding: 32px;
-    }
+        );
+        min-height: 100vh;
+      "
+    >
+      <tr>
+        <td align="center" style="padding: 20px">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="background: #171717; padding: 20px; text-align: center"
+          >
+            <tr>
+              <td>
+                <h2 style="font-size: 32px; color: #956400">
+                  BIENVENIDO A CARRERERO LIVE
+                </h2>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 20px 0; font-size: 16px">
+                <p>Oprima el siguiente enlace para confirmar su cuenta:</p>
+                <p>
+                  <a
+                    href="{{ .ConfirmationURL }}"
+                    style="
+                      display: inline-block;
+                      padding: 10px 20px;
+                      background: #d3d3d3;
+                      color: #000;
+                      text-decoration: none;
+                      font-weight: bold;
+                      margin-top: 10px;
+                    "
+                    >Confirmar cuenta</a
+                  >
+                </p>
+              </td>
+            </tr>
+          </table>
 
-    .content {
-      width: fit-content;
-      border: 1px solid #171717;
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      gap: 30px;
-      min-height: 80vh;
-    }
-
-    .button {
-      padding-top: 0.25rem;
-      padding-bottom: 0.25rem;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      text-align: center;
-      transition-property: transform;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 300ms;
-      background: #d3d3d3;
-      text-decoration: none;
-      color: #000;
-    }
-
-    .button:hover {
-      --transform-scale-x: 1.05;
-      --transform-scale-y: 1.05;
-    }
-
-    .gold {
-      background-image: linear-gradient(to right, #754e16, #fff88c, #754e16);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      font-weight: bold;
-      font-size: 32px;
-    }
-
-    .footer {
-      padding: 3.5rem; /* p-14 */
-      width: 100%; /* w-full */
-      display: flex; /* flex */
-      justify-content: center; /* justify-center */
-      align-items: center; /* items-center */
-      flex-direction: column; /* flex-col */
-      position: relative; /* relative */
-    }
-
-    .footer-content {
-      display: flex; /* flex */
-      flex-direction: column; /* flex-col */
-      justify-content: center; /* justify-center */
-      align-items: center; /* items-center */
-      gap: 1.25rem; /* gap-5 */
-    }
-
-    .social-icons {
-      display: flex; /* flex */
-      gap: 1rem; /* gap-4 */
-      align-items: center; /* items-center */
-    }
-
-    .icon {
-      transition: transform 0.2s; /* transition-transform */
-    }
-
-    .icon:hover {
-      transform: scale(1.05); /* hover:scale-105 */
-    }
-
-    .icon-size {
-      width: 2rem; /* w-8 */
-      height: 2rem; /* h-8 */
-    }
-
-    .brand-info {
-      display: flex; /* flex */
-      flex-direction: column; /* flex-col */
-      justify-content: center; /* justify-center */
-      align-items: center; /* items-center */
-      text-align: center; /* text-center */
-      font-size: 16px;
-    }
-
-    .brand-name {
-      text-transform: uppercase; /* uppercase */
-      font-weight: bold; /* font-bold */
-      background-image: linear-gradient(to right, #754e16, #fff88c, #754e16);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent; /* text-transparent */
-    }
-
-    .brand-slogan {
-      text-transform: uppercase; /* uppercase */
-      font-size: 16px;
-      font-weight: normal;
-    }
-
-    .credit {
-      color: #272727; /* text-gray */
-      position: absolute; /* absolute */
-      bottom: 0.75rem; /* bottom-3 */
-      font-size: 0.75rem; /* text-xs */
-      transition: transform 0.2s; /* transition-transform */
-    }
-
-    .credit:hover {
-      transform: scale(1.05); /* hover:scale-105 */
-    }
-  </style>
+          <!-- Footer -->
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="margin-top: 20px; text-align: center"
+          >
+            <tr>
+              <td style="font-size: 16px; padding: 10px; color: #ffffff">
+                <strong style="font-size: 18px; color: #956400"
+                  >Carrerero</strong
+                >
+                <div style="font-size: 14px">La marca de los campeones</div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-top: 20px; color: #757575; font-size: 12px">
+                By Juan Carreón
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>

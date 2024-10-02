@@ -1,10 +1,10 @@
 import { pathBase } from "../../constants";
-import { useSupabaseStore } from "../../stores/supabaseStore";
+import { useAuthStore } from "../../stores/useAuthStore";
 import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 
 export const Hero = () => {
-  const { session } = useSupabaseStore(); // Acceder a signIn y session del store
+  const { session } = useAuthStore(); // Acceder a signIn y session del store
 
   return (
     <Container>

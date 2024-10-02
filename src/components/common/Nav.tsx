@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { pathBase } from "../../constants";
-import { useSupabaseStore } from "../../stores/supabaseStore";
+import { useAuthStore } from "../../stores/useAuthStore";
+import { useAuth } from "../../hooks/useAuth";
 
 export const Nav = () => {
-  const { session, signOut } = useSupabaseStore(); // Acceder a signIn y session del store
-
+  const { session } = useAuthStore(); // Acceder a signIn y session del store
+  const { signOut } = useAuth();
   return (
     <nav className="border-b-[1px] border-gray fixed left-0 top-0 w-full flex justify-between items-center px-8 py-2 z-50 bg-gray">
       <Link to={`/${pathBase}`}>

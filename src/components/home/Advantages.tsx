@@ -2,10 +2,10 @@ import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 import devices from "../../assets/devices.png";
 import { pathBase } from "../../constants";
-import { useSupabaseStore } from "../../stores/supabaseStore";
+import { useAuthStore } from "../../stores/useAuthStore";
 
 export const Advantages = () => {
-  const { session } = useSupabaseStore(); // Acceder a signIn y session del store
+  const { session } = useAuthStore(); // Acceder a signIn y session del store
 
   return (
     <Container id="advantages">

@@ -1,30 +1,58 @@
+import { Link } from "react-router-dom";
 import { Container } from "../components/common/Container";
 import { Nav } from "../components/common/Nav";
-import { useSupabaseStore } from "../stores/supabaseStore";
+// import { useSupabaseStore } from "../stores/supabaseStore";
 import { useState } from "react";
+import { pathBase } from "../constants";
+import { Toaster, toast } from "sonner";
+import { useAuth } from "../hooks/useAuth";
 
 export const Register = () => {
-  const { signUp } = useSupabaseStore(); // Acceder a signIn y session del store
+  const { signUp } = useAuth(); // Acceder a signIn y session del store
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Manejar el inicio de sesión
   const handleSignUp = async (e: React.FormEvent) => {
-    e.preventDefault(); // Evitar el comportamiento por defecto del formulario
-    setError(null); // Limpiar errores anteriores
+    e.preventDefault();
+    setIsLoading(true);
 
-    const errorMessage = await signUp(email, password); // Obtener el mensaje de error
-    if (errorMessage) {
-      setError(errorMessage); // Si hay un error, establecerlo en el estado
-    } else {
-      alert("Registro exitoso, revisa tu correo para confirmar."); // O redirige a otra página
-    }
+    toast.promise(signUp(email, password), {
+      loading: "Loading...",
+      success: () => {
+        setIsLoading(false);
+        return `Registro exitoso, revisa tu correo para confirmar.`;
+      },
+      error: (err) => {
+        setIsLoading(false);
+        return `Error: ${err}`;
+      },
+    });
   };
 
   return (
     <Container>
+      <button
+        onClick={() =>
+          toast.loading("Cargando...", {
+            duration: 5000,
+          })
+        }
+      >
+        Render my toast
+      </button>
       <Nav />
+      <Toaster
+        toastOptions={{
+          style: {
+            background: "#000",
+            color: "#FFF",
+            borderColor: "#171717",
+          },
+          className: "class",
+        }}
+      />
       <h1 className="gold w-fit">Crea una cuenta</h1>
       <form onSubmit={handleSignUp} className="flex flex-col gap-4">
         <input
@@ -44,11 +72,19 @@ export const Register = () => {
         />
         <button
           type="submit"
-          className={`px-6 py-1 hover:scale-105 transition-transform text-center bg-secondary text-black`}
+          className={`px-6 py-1 hover:scale-105 transition-all text-center bg-secondary text-black ${
+            isLoading ? "bg-neutral-900 text-white" : ""
+          }`}
+          disabled={isLoading}
         >
           Registrarse
         </button>
-        {error && <p className="text-red-500">{error}</p>}{" "}
+        <Link
+          to={`/${pathBase}/login`}
+          className="flex justify-center underline text-neutral-500"
+        >
+          Ya tengo cuenta
+        </Link>
       </form>
     </Container>
   );
