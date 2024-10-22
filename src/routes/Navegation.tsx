@@ -46,12 +46,12 @@ export const Navegation = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={`${pathBase}`} element={<Home />} />
-        <Route path={`${pathBase}/page2`} element={<Page2 />} />
+        <Route path={``} element={<Home />} />
+        <Route path={`/page2`} element={<Page2 />} />
 
         {/* Rutas protegidas por sesión */}
         <Route
-          path={`${pathBase}/pay`}
+          path={`/pay`}
           element={
             <ProtectedRoute>
               <Pay />
@@ -61,7 +61,7 @@ export const Navegation = () => {
 
         {/* Rutas protegidas por suscripción */}
         <Route
-          path={`${pathBase}/lives`}
+          path={`/lives`}
           element={
             <SubscriptionRoute>
               <Lives />
@@ -69,7 +69,7 @@ export const Navegation = () => {
           }
         />
         <Route
-          path={`${pathBase}/stream`}
+          path={`/stream`}
           element={
             <SubscriptionRoute>
               <Stream />
@@ -79,7 +79,7 @@ export const Navegation = () => {
 
         {/* Rutas públicas */}
         <Route
-          path={`${pathBase}/register`}
+          path={`/register`}
           element={
             <NoSessionRoute>
               <Register />
@@ -87,14 +87,14 @@ export const Navegation = () => {
           }
         />
         <Route
-          path={`${pathBase}/login`}
+          path={`/login`}
           element={
             <NoSessionRoute>
               <Login />
             </NoSessionRoute>
           }
         />
-        <Route path={`${pathBase}/*`} element={<p>404 not found</p>} />
+        <Route path={`/*`} element={<p>404 not found</p>} />
       </Routes>
     </BrowserRouter>
   );
