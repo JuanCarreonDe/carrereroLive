@@ -3,7 +3,6 @@ import { Container } from "../components/common/Container";
 import { Nav } from "../components/common/Nav";
 // import { useSupabaseStore } from "../stores/supabaseStore";
 import { useState } from "react";
-import { pathBase } from "../constants";
 import { Toaster, toast } from "sonner";
 // import { useAuth } from "../hooks/useAuth";
 import { useAuthStore } from "../stores/useAuthStore";

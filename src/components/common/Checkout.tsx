@@ -1,11 +1,7 @@
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import { useAuthStore } from "../../stores/useAuthStore";
-import { API_URL, pathBase } from "../../constants";
+import { API_URL } from "../../constants";
 import { useNavigate } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
-// import { pathBase } from "../../constants";
-
-// import { useAuth } from "../../hooks/useAuth";
 
 export const Checkout = () => {
   const { session, checkSubscription } = useAuthStore();

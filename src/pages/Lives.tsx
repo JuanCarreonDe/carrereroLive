@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container } from "../components/common/Container";
 import { Nav } from "../components/common/Nav";
-import { pathBase } from "../constants";
 
 export const Lives = () => {
   return (

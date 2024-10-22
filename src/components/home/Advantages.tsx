@@ -1,7 +1,6 @@
 import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 import devices from "../../assets/devices.png";
-import { pathBase } from "../../constants";
 import { useAuthStore } from "../../stores/useAuthStore";
 // import { useAuth } from "../../hooks/useAuth";
 
