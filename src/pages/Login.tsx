@@ -5,10 +5,11 @@ import { Nav } from "../components/common/Nav";
 import { Link, useNavigate } from "react-router-dom";
 import { pathBase } from "../constants";
 import { Toaster, toast } from "sonner";
-import { useAuth } from "../hooks/useAuth";
+// import { useAuth } from "../hooks/useAuth";
+import { useAuthStore } from "../stores/useAuthStore";
 
 export const Login = () => {
-  const { signIn, session } = useAuth(); // Acceder a signIn y session del store
+  const { signIn, session } = useAuthStore(); // Acceder a signIn y session del store
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -29,12 +30,12 @@ export const Login = () => {
       loading: "Loading...",
       success: () => {
         setIsLoading(false);
-        navigate(`/${pathBase}/lives`);
+        navigate(`/${pathBase}/`);
         return `Sesión iniciada.`;
       },
       error: (err) => {
         setIsLoading(false);
-        return `Error: ${err}`;
+        return `${err}`;
       },
     });
   };

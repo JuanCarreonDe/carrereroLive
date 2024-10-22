@@ -5,10 +5,11 @@ import { Nav } from "../components/common/Nav";
 import { useState } from "react";
 import { pathBase } from "../constants";
 import { Toaster, toast } from "sonner";
-import { useAuth } from "../hooks/useAuth";
+// import { useAuth } from "../hooks/useAuth";
+import { useAuthStore } from "../stores/useAuthStore";
 
 export const Register = () => {
-  const { signUp } = useAuth(); // Acceder a signIn y session del store
+  const { signUp } = useAuthStore(); // Acceder a signIn y session del store
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -26,7 +27,7 @@ export const Register = () => {
       },
       error: (err) => {
         setIsLoading(false);
-        return `Error: ${err}`;
+        return `${err}`;
       },
     });
   };

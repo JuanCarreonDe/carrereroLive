@@ -1,10 +1,11 @@
 import { pathBase } from "../../constants";
 import { useAuthStore } from "../../stores/useAuthStore";
+// import { useAuth } from "../../hooks/useAuth";
 import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 
 export const Hero = () => {
-  const { session } = useAuthStore(); // Acceder a signIn y session del store
+  const { session, subscription, loading } = useAuthStore();
 
   return (
     <Container>
@@ -20,15 +21,23 @@ export const Hero = () => {
           de carreras de caballos en un mismo lugar.
         </p>
         <div className="flex gap-4">
-          <Button
-            toPath={`/${pathBase}/${session ? "lives" : "register"}`}
-            text={"Unirse"}
-          />
-          <Button
-            href={"#advantages"}
-            text={"Saber más"}
-            tailwindClass="bg-gray text-white border-[1px]"
-          />
+          {loading ? (
+            <span>loading</span>
+          ) : subscription ? (
+            <Button toPath={`/${pathBase}/lives`} text={"Ir a Lives"} />
+          ) : (
+            <>
+              <Button
+                toPath={`/${pathBase}/${session ? "pay" : "register"}`}
+                text={"Unirse"}
+              />
+              <Button
+                href={"#advantages"}
+                text={"Saber más"}
+                tailwindClass="bg-gray text-white border-[1px]"
+              />
+            </>
+          )}
         </div>
       </div>
       <div className="absolute bg-gray w-full h-full"></div>
