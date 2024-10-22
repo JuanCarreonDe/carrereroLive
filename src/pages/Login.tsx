@@ -18,7 +18,7 @@ export const Login = () => {
   useEffect(() => {
     // Redirigir si ya existe una sesión
     if (session) {
-      navigate(`/${pathBase}/lives`); // Redirigir a lives si hay sesión
+      navigate(`/lives`); // Redirigir a lives si hay sesión
     }
   }, [session, navigate]);
 
@@ -30,7 +30,7 @@ export const Login = () => {
       loading: "Loading...",
       success: () => {
         setIsLoading(false);
-        navigate(`/${pathBase}/`);
+        navigate(`/`);
         return `Sesión iniciada.`;
       },
       error: (err) => {
@@ -80,7 +80,7 @@ export const Login = () => {
           Iniciar sesión
         </button>
         <Link
-          to={`/${pathBase}/register`}
+          to={`/register`}
           className="flex flex-col justify-center items-center text-neutral-500"
         >
           ¿Aún no tiene una cuenta?

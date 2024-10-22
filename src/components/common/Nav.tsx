@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { pathBase } from "../../constants";
 // import { useAuth } from "../../hooks/useAuth";
 import { useAuthStore } from "../../stores/useAuthStore";
 import { CiLogin } from "react-icons/ci";
@@ -9,15 +8,12 @@ export const Nav = () => {
   const { signOut, session, subscription } = useAuthStore();
   return (
     <nav className="border-b-[1px] border-gray fixed left-0 top-0 w-full flex justify-between items-center px-8 py-2 z-50 bg-gray">
-      <Link to={`/${pathBase}`}>
+      <Link to={`/`}>
         <img src={logo} alt="" className="w-12 h-12" />
       </Link>
       <ul className="flex gap-4 justify-center items-center">
         {subscription && (
-          <Link
-            className="hover:scale-105 transition-transform"
-            to={`/${pathBase}/lives`}
-          >
+          <Link className="hover:scale-105 transition-transform" to={`/lives`}>
             Lives
           </Link>
         )}
@@ -38,7 +34,7 @@ export const Nav = () => {
             <li>
               <Link
                 className="hover:scale-105 transition-transform"
-                to={`/${pathBase}/register`}
+                to={`/register`}
               >
                 Unirse
               </Link>
@@ -46,7 +42,7 @@ export const Nav = () => {
             <li>
               <Link
                 className="hover:scale-105 transition-transform"
-                to={`/${pathBase}/login`}
+                to={`/login`}
               >
                 Iniciar Sesión
               </Link>

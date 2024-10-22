@@ -20,10 +20,10 @@ export const Advantages = () => {
       {loading ? (
         <span>loading</span>
       ) : subscription ? (
-        <Button toPath={`/${pathBase}/lives`} text={"Ir a Lives"} />
+        <Button toPath={`/lives`} text={"Ir a Lives"} />
       ) : (
         <Button
-          toPath={`/${pathBase}/${session ? "pay" : "register"}`}
+          toPath={`/${session ? "pay" : "register"}`}
           text="Unirse"
           tailwindClass="self-start bg-secondary text-black"
         />

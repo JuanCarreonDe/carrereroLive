@@ -72,7 +72,7 @@ export const Register = () => {
           Registrarse
         </button>
         <Link
-          to={`/${pathBase}/login`}
+          to={`/login`}
           className="flex justify-center underline text-neutral-500"
         >
           Ya tengo cuenta

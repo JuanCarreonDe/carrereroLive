@@ -8,7 +8,6 @@ import { Pay } from "../pages/Pay";
 import { Lives } from "../pages/Lives";
 import { Stream } from "../pages/Stream";
 import { useAuthStore } from "../stores/useAuthStore";
-import { pathBase } from "../constants";
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { session, loading } = useAuthStore();
@@ -19,7 +18,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   if (loading) {
     return <div>Cargando...</div>;
   }
-  return session ? children : <Navigate to={`/${pathBase}/login`} />;
+  return session ? children : <Navigate to={`/login`} />;
 };
 
 const SubscriptionRoute = ({ children }: { children: React.ReactNode }) => {
@@ -27,7 +26,7 @@ const SubscriptionRoute = ({ children }: { children: React.ReactNode }) => {
   if (loading) {
     return <div>Cargando...</div>;
   }
-  return subscription ? children : <Navigate to={`/${pathBase}/pay`} />;
+  return subscription ? children : <Navigate to={`/pay`} />;
 };
 
 const NoSessionRoute = ({ children }: { children: React.ReactNode }) => {
@@ -39,7 +38,7 @@ const NoSessionRoute = ({ children }: { children: React.ReactNode }) => {
   if (loading) {
     return <div>Cargando...</div>;
   }
-  return session ? <Navigate to={`/${pathBase}/pay`} /> : children;
+  return session ? <Navigate to={`/pay`} /> : children;
 };
 
 export const Navegation = () => {

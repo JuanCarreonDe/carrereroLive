@@ -61,7 +61,7 @@ export const Checkout = () => {
           response.ok
         );
         checkSubscription(); // Verificar sub si todo fue ok
-        navigate(`/${pathBase}/lives`);
+        navigate(`/lives`);
       }
     });
   };
