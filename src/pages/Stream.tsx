@@ -6,6 +6,9 @@ export const Stream = () => {
     <Container>
       <Nav />
       <div>stream</div>
+      <span className="text-neutral-500">
+        *en esta pantalla se mostrará la transmision en vivo*
+      </span>
     </Container>
   );
 };

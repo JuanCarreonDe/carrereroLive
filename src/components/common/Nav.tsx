@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 // import { useAuth } from "../../hooks/useAuth";
 import { useAuthStore } from "../../stores/useAuthStore";
 import { CiLogin } from "react-icons/ci";
+import { FaCheck } from "react-icons/fa6";
 
 export const Nav = () => {
   const { signOut, session, subscription } = useAuthStore();
@@ -12,23 +13,49 @@ export const Nav = () => {
         <img src={logo} alt="" className="w-12 h-12" />
       </Link>
       <ul className="flex gap-4 justify-center items-center">
-        {subscription && (
-          <Link className="hover:scale-105 transition-transform" to={`/lives`}>
-            Lives
-          </Link>
-        )}
         {session ? (
-          <>
-            <div className="max-w-28 overflow-hidden text-ellipsis">
-              {subscription && session && <span>✔️</span>}
-              {session.user.email}
-            </div>
-            <div className="flex justify-center items-center gap-2">
-              <button onClick={signOut}>
-                <CiLogin size={30} />
-              </button>
-            </div>
-          </>
+          subscription ? (
+            <>
+              <span className="max-w-28 w-full flex items-center gap-1 text-neutral-400">
+                {subscription && session && <FaCheck size={30} />}
+                <span className="max-w-28 text-ellipsis overflow-hidden">
+                  {session.user.email}
+                </span>
+              </span>
+
+              <Link
+                className="hover:scale-105 transition-transform"
+                to={`/lives`}
+              >
+                Lives
+              </Link>
+              <div className="flex justify-center items-center gap-2">
+                <button onClick={signOut}>
+                  <CiLogin size={30} />
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <span className="max-w-28 w-full flex items-center gap-1 text-neutral-400">
+                {subscription && session && <FaCheck size={30} />}
+                <span className="max-w-28 text-ellipsis overflow-hidden">
+                  {session.user.email}
+                </span>
+              </span>
+              <Link
+                className="hover:scale-105 transition-transform"
+                to={`/pay`}
+              >
+                Activar
+              </Link>
+              <div className="flex justify-center items-center gap-2">
+                <button onClick={signOut}>
+                  <CiLogin size={30} />
+                </button>
+              </div>
+            </>
+          )
         ) : (
           <>
             <li>

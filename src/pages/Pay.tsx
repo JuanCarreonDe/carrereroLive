@@ -12,11 +12,8 @@ export const Pay = () => {
       <h1 className="gold w-fit">Pago</h1>
       <div className="flex flex-col gap-4 md:px-20">
         <h2 className="font-semibold">Nombre del plan</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ut
-          nulla, ex velit repudiandae minus praesentium, autem repellendus
-          impedit reiciendis vel totam natus quas maxime molestiae sequi!
-          Eveniet, molestiae dolorum.
+        <p className="text-neutral-500">
+          *Informacion del plan, accesos, monto, etc*
         </p>
         <span>
           <strong>$149</strong>/mes

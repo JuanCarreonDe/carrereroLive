@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Home } from "../pages/Home";
-import { Page2 } from "../pages/Page2";
 import { Register } from "../pages/Register";
 import { Login } from "../pages/Login";
 import { Pay } from "../pages/Pay";
@@ -46,7 +45,6 @@ export const Navegation = () => {
     <BrowserRouter>
       <Routes>
         <Route path={``} element={<Home />} />
-        <Route path={`/page2`} element={<Page2 />} />
 
         {/* Rutas protegidas por sesión */}
         <Route

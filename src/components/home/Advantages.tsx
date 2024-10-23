@@ -18,11 +18,24 @@ export const Advantages = () => {
       </p>
       {loading ? (
         <span>loading</span>
-      ) : subscription ? (
-        <Button toPath={`/lives`} text={"Ir a Lives"} />
+      ) : session ? (
+        subscription ? (
+          // con sub
+          <Button
+            toPath={`/lives`}
+            text={"Ir a Lives"}
+            tailwindClass="self-start bg-red-600 animate-pulse"
+          />
+        ) : (
+          <Button
+            toPath={`/pay`}
+            text={"Activar Subscripcion"}
+            tailwindClass="self-start bg-white text-gray animate-pulse"
+          />
+        )
       ) : (
         <Button
-          toPath={`/${session ? "pay" : "register"}`}
+          toPath={`/register`}
           text="Unirse"
           tailwindClass="self-start bg-secondary text-black"
         />
@@ -31,3 +44,19 @@ export const Advantages = () => {
     </Container>
   );
 };
+
+// {loading ? (
+//   <span>loading</span>
+// ) : subscription ? (
+//   <Button
+//     toPath={`/lives`}
+//     text={"Ir a Lives"}
+//     tailwindClass="bg-red-600 animate-pulse"
+//   />
+// ) : (
+//   <Button
+//     toPath={`/${session ? "pay" : "register"}`}
+//     text="Unirse"
+//     tailwindClass="self-start bg-secondary text-black"
+//   />
+// )}
