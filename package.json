@@ -12,6 +12,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@mux/mux-player": "^3.1.0",
+    "@mux/mux-player-react": "^3.1.0",
     "@paypal/react-paypal-js": "^8.6.0",
     "@supabase/auth-ui-react": "^0.4.7",
     "@supabase/auth-ui-shared": "^0.1.8",

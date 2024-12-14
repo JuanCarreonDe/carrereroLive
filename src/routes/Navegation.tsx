@@ -66,7 +66,7 @@ export const Navegation = () => {
           }
         />
         <Route
-          path={`/stream`}
+          path={`/stream/:paybackId`}
           element={
             <SubscriptionRoute>
               <Stream />
