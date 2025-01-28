@@ -8,7 +8,7 @@ import { FaCheck } from "react-icons/fa6";
 export const Nav = () => {
   const { signOut, session, subscription } = useAuthStore();
   return (
-    <nav className="border-b-[1px] border-gray fixed left-0 top-0 w-full flex justify-between items-center px-8 py-2 z-50 bg-gray">
+    <nav className="border-b-[1px] border-black fixed left-0 top-0 w-full flex justify-between items-center px-8 py-2 z-[101] bg-primary">
       <Link to={`/`}>
         <img src={logo} alt="" className="w-12 h-12" />
       </Link>

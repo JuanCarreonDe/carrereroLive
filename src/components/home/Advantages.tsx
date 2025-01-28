@@ -10,11 +10,10 @@ export const Advantages = () => {
 
   return (
     <Container id="advantages">
-      <h1 className="gold">Transmisiones en vivo</h1>
-      <p>
-        Accede desde cualquier lugar a las transmisiones en vivo de las mejores
-        pistas de Nuevo León. Zuazua Arena Downs, River Racing Track, Rancho El
-        Texano y Agua Nueva desde un solo lugar
+      <h1 className="accent">Transmisiones en vivo</h1>
+      <p className="w-full text-left">
+        Accede desde cualquier lugar a las mejores transmisiones en vivo de
+        Zuazua Arena Race Track.
       </p>
       {loading ? (
         <span>loading</span>

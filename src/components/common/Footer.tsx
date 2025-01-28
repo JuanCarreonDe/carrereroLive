@@ -18,16 +18,14 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center text-center">
-          <strong className="uppercase font-bold bg-gradient-to-r from-[#754E16] via-[#FFF88C] to-[#754E16] text-transparent bg-clip-text">
-            carrerero
-          </strong>
-          <h3 className="uppercase">La marca de los campeones</h3>
+          <strong className="accent-sm">Zuazua Arena Race Track</strong>
+          {/* <h3 className="uppercase">La marca de los campeones</h3> */}
         </div>
       </div>
 
-      <a className="text-gray absolute bottom-3 text-xs hover:scale-105 transition-transform">
+      {/* <a className="text-gray absolute bottom-3 text-xs hover:scale-105 transition-transform">
         By Juan Carreón
-      </a>
+      </a> */}
     </footer>
   );
 };

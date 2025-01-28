@@ -12,7 +12,7 @@ export const Pay = () => {
     <Container>
       <PayPalScriptProvider options={initialOptions}>
         <Nav />
-        <h1 className="gold w-fit">Pago</h1>
+        <h1 className="accent w-fit">Pago</h1>
         <div className="flex flex-col gap-4 md:px-20">
           <h2 className="font-semibold">Nombre del plan</h2>
           <p className="text-neutral-500">

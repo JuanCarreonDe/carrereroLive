@@ -44,7 +44,7 @@ export const Register = () => {
           className: "class",
         }}
       />
-      <h1 className="gold w-fit">Crea una cuenta</h1>
+      <h1 className="accent w-fit">Crea una cuenta</h1>
       <form onSubmit={handleSignUp} className="flex flex-col gap-4">
         <input
           className="focus-visible:outline-none bg-transparent border-[1px] border-gray px-4 py-2"

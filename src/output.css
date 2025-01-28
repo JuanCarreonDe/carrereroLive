@@ -592,8 +592,8 @@ video {
   z-index: 10;
 }
 
-.z-50{
-  z-index: 50;
+.z-\[101\]{
+  z-index: 101;
 }
 
 .mx-auto{
@@ -634,14 +634,6 @@ video {
   height: 100%;
 }
 
-.h-6{
-  height: 1.5rem;
-}
-
-.min-h-\[300vh\]{
-  min-height: 300vh;
-}
-
 .min-h-\[80vh\]{
   min-height: 80vh;
 }
@@ -669,10 +661,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.w-6{
-  width: 1.5rem;
 }
 
 .min-w-full{
@@ -733,6 +721,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-1{
+  gap: 0.25rem;
+}
+
 .gap-2{
   gap: 0.5rem;
 }
@@ -747,10 +739,6 @@ video {
 
 .gap-8{
   gap: 2rem;
-}
-
-.gap-1{
-  gap: 0.25rem;
 }
 
 .self-start{
@@ -773,10 +761,6 @@ video {
   text-overflow: ellipsis;
 }
 
-.text-balance{
-  text-wrap: balance;
-}
-
 .text-pretty{
   text-wrap: pretty;
 }
@@ -789,10 +773,6 @@ video {
   border-width: 1px;
 }
 
-.border{
-  border-width: 1px;
-}
-
 .border-b-\[1px\]{
   border-bottom-width: 1px;
 }
@@ -801,17 +781,32 @@ video {
   border-top-width: 1px;
 }
 
+.border-black{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .border-gray{
   --tw-border-opacity: 1;
   border-color: rgb(23 23 23 / var(--tw-border-opacity));
 }
 
-.bg-gray{
+.border-primary{
+  --tw-border-opacity: 1;
+  border-color: rgb(23 23 23 / var(--tw-border-opacity));
+}
+
+.bg-neutral-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+}
+
+.bg-neutral-900{
   --tw-bg-opacity: 1;
   background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 
-.bg-neutral-900{
+.bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
@@ -839,25 +834,10 @@ video {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
-.bg-gradient-to-r{
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
 .from-\[\#151515\]{
   --tw-gradient-from: #151515 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(21 21 21 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-\[\#754E16\]{
-  --tw-gradient-from: #754E16 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(117 78 22 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.via-\[\#FFF88C\]{
-  --tw-gradient-to: rgb(255 248 140 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #FFF88C var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .via-black{
@@ -867,15 +847,6 @@ video {
 
 .to-\[\#151515\]{
   --tw-gradient-to: #151515 var(--tw-gradient-to-position);
-}
-
-.to-\[\#754E16\]{
-  --tw-gradient-to: #754E16 var(--tw-gradient-to-position);
-}
-
-.bg-clip-text{
-  -webkit-background-clip: text;
-          background-clip: text;
 }
 
 .p-14{
@@ -925,6 +896,10 @@ video {
   padding-top: 5rem;
 }
 
+.text-left{
+  text-align: left;
+}
+
 .text-center{
   text-align: center;
 }
@@ -936,10 +911,6 @@ video {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.font-bold{
-  font-weight: 700;
 }
 
 .font-semibold{
@@ -960,6 +931,11 @@ video {
   color: rgb(23 23 23 / var(--tw-text-opacity));
 }
 
+.text-neutral-400{
+  --tw-text-opacity: 1;
+  color: rgb(163 163 163 / var(--tw-text-opacity));
+}
+
 .text-neutral-500{
   --tw-text-opacity: 1;
   color: rgb(115 115 115 / var(--tw-text-opacity));
@@ -975,18 +951,9 @@ video {
   color: rgb(211 211 211 / var(--tw-text-opacity));
 }
 
-.text-transparent{
-  color: transparent;
-}
-
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-neutral-400{
-  --tw-text-opacity: 1;
-  color: rgb(163 163 163 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -1005,13 +972,22 @@ video {
   transition-duration: 150ms;
 }
 
-.gold{
-  background-image: linear-gradient(to right, #754E16, #FFF88C, #754E16);
+.accent{
+  background-image: linear-gradient(to right, #6984ff, #001573, #6984ff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
   font-size: 32px;
+}
+
+.accent-sm{
+  background-image: linear-gradient(to right, #6984ff, #001573, #6984ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 /* html{

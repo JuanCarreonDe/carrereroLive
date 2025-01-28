@@ -52,7 +52,7 @@ export const Login = () => {
           className: "class",
         }}
       />
-      <h1 className="gold w-fit">Iniciar Sesión</h1>
+      <h1 className="accent w-fit">Iniciar Sesión</h1>
       <form onSubmit={handleSignIn} className="flex flex-col gap-4">
         <input
           className="focus-visible:outline-none bg-transparent border-[1px] border-gray px-4 py-2"

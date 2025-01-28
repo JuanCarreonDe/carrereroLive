@@ -20,10 +20,10 @@ export const Examples = () => {
     }
     console.log("hiprev");
   };
-  
+
   return (
     <Container>
-      <h1 className="gold text-center">Las mejores transmisiones</h1>
+      <h1 className="accent text-center">Las mejores transmisiones</h1>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam
         culpa temporibus, suscipit debitis, praesentium dolores
@@ -36,13 +36,13 @@ export const Examples = () => {
           ref={scrollContainerRef}
           className="flex w-full max-w-md overflow-x-scroll scroll-smooth scroll__container"
         >
-          <div className="w-full min-w-full flex aspect-video justify-center items-center bg-gray">
+          <div className="w-full min-w-full flex aspect-video justify-center items-center bg-primary">
             1
           </div>
-          <div className="w-full min-w-full flex aspect-video justify-center items-center bg-gray">
+          <div className="w-full min-w-full flex aspect-video justify-center items-center bg-primary">
             2
           </div>
-          <div className="w-full min-w-full flex aspect-video justify-center items-center bg-gray">
+          <div className="w-full min-w-full flex aspect-video justify-center items-center bg-primary">
             3
           </div>
         </div>

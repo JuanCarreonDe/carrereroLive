@@ -10,10 +10,10 @@ export const Hero = () => {
     <Container>
       <div className="flex flex-col justify-center items-center flex-1 z-10 w-full gap-8">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="gold w-fit">Carrerero</h1>
-          <span className="uppercase text-secondary">
+          <h1 className="accent w-fit">Zuazua Arena Race Track</h1>
+          {/* <span className="uppercase text-secondary">
             La marca de los campeones
-          </span>
+          </span> */}
         </div>
         {loading ? (
           <span>loading</span>
@@ -29,7 +29,8 @@ export const Hero = () => {
             <>
               {/* sin sub */}
               <p className="text-center text-pretty">
-                ¡Estas a un paso de acceder al contenido de Carrerero Live!
+                ¡Estas a un paso de acceder al contenido de Zuazua Arena Race
+                Track!
               </p>
               <div className="flex gap-4">
                 <Button
@@ -44,53 +45,21 @@ export const Hero = () => {
           <>
             {/* sin session */}
             <p className="text-center text-pretty">
-              Trae para ustes Carrerero Live. Disfrute de las mejores
-              transmisiones de carreras de caballos en un mismo lugar.
+              Trae para ustedes las mejores transmisiones de carreras de
+              caballos en un mismo lugar.
             </p>
             <div className="flex gap-4">
               <Button toPath={`/register`} text={"Unirse"} />
               <Button
                 href={"#advantages"}
                 text={"Saber más"}
-                tailwindClass="bg-gray text-white border-[1px]"
+                tailwindClass="bg-primary text-white border-[1px]"
               />
             </div>
           </>
         )}
-        {/* </div> */}
       </div>
-      <div className="absolute bg-gray w-full h-full"></div>
+      <div className="absolute bg-primary w-full h-full"></div>
     </Container>
   );
 };
-
-// {session ? (
-//   <p>Estas a un paso de adfas</p>
-// ) : (
-//   <p>
-//     Trae para ustes Carrerero Live. Disfrute de las mejores
-//     transmisiones de carreras de caballos en un mismo lugar.
-//   </p>
-// )}
-// <div className="flex gap-4">
-//   {loading ? (
-//     <span>loading</span>
-//   ) : subscription ? (
-//     <Button
-//       toPath={`/lives`}
-//       text={"Ir a Lives"}
-//       tailwindClass="bg-red-600 animate-pulse"
-//     />
-//   ) : (
-//     <>
-//       <Button
-//         toPath={`/${session ? "pay" : "register"}`}
-//         text={"Unirse"}
-//       />
-//       <Button
-//         href={"#advantages"}
-//         text={"Saber más"}
-//         tailwindClass="bg-gray text-white border-[1px]"
-//       />
-//     </>
-//   )}
