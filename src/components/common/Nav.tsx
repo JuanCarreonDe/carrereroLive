@@ -10,7 +10,7 @@ export const Nav = () => {
   return (
     <nav className="border-b-[1px] border-black fixed left-0 top-0 w-full flex justify-between items-center px-8 py-2 z-[101] bg-primary">
       <Link to={`/`}>
-        <img src={logo} alt="" className="w-12 h-12" />
+        <img src={logo} alt="" className="h-12 object-contain" />
       </Link>
       <ul className="flex gap-4 justify-center items-center">
         {session ? (
