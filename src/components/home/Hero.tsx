@@ -10,7 +10,7 @@ export const Hero = () => {
     <Container>
       <div className="flex flex-col justify-center items-center flex-1 z-10 w-full gap-8">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="accent w-fit">Zuazua Arena Race Track</h1>
+          <h1 className="accent w-fit text-center">Zuazua Arena Race Track</h1>
           {/* <span className="uppercase text-secondary">
             La marca de los campeones
           </span> */}
